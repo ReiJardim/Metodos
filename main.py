@@ -3,19 +3,41 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+st.set_page_config(
+    page_title="Metodos",
+    layout="wide",
+    initial_sidebar_state="expanded",
+
+)
+
+
 st.title("Métodos Computacionais")
 
+col01_01, col01_02 = st.columns([0.7, 0.3])
 
-# Define the x values
-x = np.linspace(0, 10, 400)  # From 0 to 10, with 400 points
+with col01_02:
+    col01_02_01, col01_02_02 = st.columns([0.5, 0.5])
 
-variabel_a = st.slider("Variavel A", 0.0, 10.0, 0.1)
-variabel_b = st.slider("Variavel B", 0.0, 10.0, 0.1)
+    with col01_02_01:
+        x_inicial = st.number_input(
+            "Valor inicial", value=0, placeholder="Digite um numero")
+    with col01_02_02:
+        x_final = st.number_input(
+            "Valor final", value=10, placeholder="Digite um numero")
 
-# Define the function
-y = np.exp(-x)*variabel_a - np.cos(x)*variabel_b
+    variabel_a = st.slider("Variavel A", 0.0, 10.0, 0.1)
+    variabel_b = st.slider("Variavel B", 0.0, 10.0, 0.1)
 
-st.title(f"np.exp(-x)*{variabel_a} - np.cos(x)*{variabel_b}")
+
+st.text_input("Informe o polinomio", )
+
+
+x = np.linspace(x_inicial, x_final, 400)
+
+y = np.exp(-x) - np.cos(x)
+
+st.title()
 
 # Create the plot
 fig, ax = plt.subplots(figsize=(10, 6))  # Create figure and axes objects
