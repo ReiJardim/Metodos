@@ -102,11 +102,11 @@ def lagrange_interpolation(x, y, x_interp):
 
 # --- Exemplo de Uso ---
 # Pontos conhecidos (x, y)
-x_conhecidos = [-0.6321, 0.1065, 1]
-y_conhecidos = [-1, -0.5, 0]
+x_conhecidos = [0.2, 0.3, 0.4,]
+y_conhecidos = [1.8221, 2.4596, 3.3201]
 
 # Ponto onde queremos interpolar
-x_para_interpolar = 0
+x_para_interpolar = 0.25
 
 # Realizar a interpolação
 y_interpolado, polinomio_latex = lagrange_interpolation(
